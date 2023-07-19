@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      #myChart {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1><%= title %></h1>
+      <canvas id="myChart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Black', 'White', 'Red', 'Green', 'Blue', 'Yellow', 'Purple'],
+          datasets: [{
+            label: 'Color Prediction',
+            data: [<%= output.black %>, <%= output.white %>, <%= output.red %>, <%= output.green %>, <%= output.blue %>, <%= output.yellow %>, <%= output.purple %>],
+            backgroundColor: [
+              'rgba(0, 0, 0, 0.2)',
+              'rgba(255, 255, 255, 0.2)',
+              'rgba(255, 0, 0, 0.2)',
+              'rgba(0, 255, 0, 0.2)',
+              'rgba(0, 0, 255, 0.2)',
+              'rgba(255, 255, 0, 0.2)',
+              'rgba(128, 0, 128, 0.2)'
+            ],
+            borderColor: [
+              'rgba(0, 0, 0, 1)',
+              'rgba(255, 255, 255, 1)',
+              'rgba(255, 0, 0, 1)',
+              'rgba(0, 255, 0, 1)',
+              'rgba(0, 0, 255, 1)',
+              'rgba(255, 255, 0, 1)',
+              'rgba(128, 0, 128, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          },
+          plugins: {
+            legend: {
+              labels: {
+                color: 'rgba(0, 0, 0, 0.87)',
+                font: {
+                  size: 18
+                }
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
