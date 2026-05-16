@@ -6,15 +6,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 Node.js
-npm
-## Installation
-* Clone the repository
+
 bash
-Copy code
-git clone https://github.com/pejmantheory/neural-network-color-classifier.git
-* Navigate to the project directory
-bash
-Copy code
+
 cd neural-network-color-classifier
 * Install the dependencies
 bash
