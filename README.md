@@ -11,7 +11,7 @@ npm
 * Clone the repository
 bash
 Copy code
-git clone https://github.com/yourusername/neural-network-color-classifier.git
+git clone https://github.com/pejmantheory/neural-network-color-classifier.git
 * Navigate to the project directory
 bash
 Copy code
